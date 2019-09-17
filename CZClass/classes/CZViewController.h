@@ -7,11 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+typedef void (^PopBackCallback) (NSDictionary * dic);
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CZViewController : UIViewController
 
+@property (nonatomic, copy) PopBackCallback callback;
+
+
+/**
+ @brief 是否显示Tab，默认不显示
+ */
+@property (nonatomic, assign) BOOL isShowTab;
 /**
  @brief 是否重新刷新当前VC数据
  */
